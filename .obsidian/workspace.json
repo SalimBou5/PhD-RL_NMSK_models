@@ -6,22 +6,10 @@
       {
         "id": "2ea9a0b461fabe7b",
         "type": "tabs",
+        "dimension": 69.88255033557047,
         "children": [
           {
             "id": "9100b72388c8825f",
-            "type": "leaf",
-            "state": {
-              "type": "bases",
-              "state": {
-                "file": "Sans titre.base",
-                "viewName": "Tableau"
-              },
-              "icon": "lucide-table",
-              "title": "Sans titre"
-            }
-          },
-          {
-            "id": "d0fb0b20d67809a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,8 +22,28 @@
               "title": "1 - Research proposal - ETH + UT"
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "5340b45a53453bf2",
+        "type": "tabs",
+        "dimension": 30.11744966442953,
+        "children": [
+          {
+            "id": "d0fb0b20d67809a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OBSIDIAN - TRICKS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OBSIDIAN - TRICKS"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -58,7 +66,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorateur de fichiers"
+              "title": "Files"
             }
           },
           {
@@ -188,24 +196,25 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Ouvrir le sélecteur rapide": false,
-      "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer une nouvelle toile": false,
-      "daily-notes:Ouvrir la note quotidienne": false,
-      "templates:Insérer le modèle": false,
-      "command-palette:Ouvrir la palette de commandes": false,
-      "bases:Créer une nouvelle base": false,
-      "audio-recorder:Démarrer / arrêter l'enregistrement": false,
-      "markdown-importer:Ouvrir l'importateur Markdown": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "audio-recorder:Start/stop recording": false,
+      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d0fb0b20d67809a1",
+  "active": "9100b72388c8825f",
   "lastOpenFiles": [
+    "Pasted image 20260410165009.png",
+    "intro/Literature review/1 - Research proposal - ETH + UT.md",
     "OBSIDIAN - TRICKS.md",
     "Sans titre.base",
     "Sans titre.canvas",
-    "intro/Literature review/1 - Research proposal - ETH + UT.md",
     "Meetings/0-Meeting Yolanda.md",
     "2026-04-09.md",
     "intro/Organization.md",
