@@ -7,7 +7,22 @@ rigid robots in real-life locomotion and manipulation.
 >
 **==$\Rightarrow$ Here, we propose to create the first computationally optimized hybrid rigid-soft robot powered by electrofluidic actuators (EFAs) withboth a denser degree of freedom (DoF) and more agility than any other robot to date==**
 
-Human-inspired neural control policies and rapid machinelearning-based robot optimization will require an interdisciplinary collaboration that brings in a deep comprehension of the human neuro-MSK system and hybrid rigid-soft robotic system design.
+Human-inspired neural control policies and rapid ML-based robot optimization will require an interdisciplinary collaboration that brings in a deep comprehension of the human neuro-MSK system and hybrid rigid-soft robotic system design.
+
+>[!ABSTRACT]  **Learn human-like force control at the neural level $\implies$ generate policies $\implies$ transfer to robots**
+>So the final final goal is to develop a robot that moves in a biologically plausible way somehow and to do so, there are 2 parts hardware (not my task) and software (control). So we need to learn how to move in a biologically plausible way $\implies$ We need a simulation on which we can train the policies and since we want it as biologically plausible as possible we need to go deeper than just the muscle level, we want to go to the level of the alpha motor unit (**neurons**). 
+> > [!todo] **My tasks (or partly) I think**:
+> >  $\implies$ We need a good understanding of how the human nervous system commands mechanical force. This would provide the highest temporal and spatial resolution for robust force control which is critical to develop control strategies for MSK robots. $\implies$ **Data-model fusion approach** will gives us in-vivo characterization of how limb movements are controlled in the muscle-force domain by the $\alpha$-motor neurons **(Task 5)** $\implies$ This in-vivo characterization will enablebuilding numerical models of how spinal neurons control complex, non-linear MSK systems (spiking NN for the control of MSK force) **(Task 6)**  
+> >As soon as we have this simulation, it can be integrated within a new RL framework based on myosuite and MSK motor control.
+> > >[!success] RL-powered simulations will reproduce not only realistic kinematic data but also the underlying MSK impedances (the movements and environment interactions will be based on realistic values for joint torque, stiffness, damping and force.) **(Task 7)**
+> > > >[!failure] If DHT (Digital Human Twin) does not achieve realistic movements, simplify the amount of neuro-mechanical variables to be reproduced in-silico (simulation of realistic joint impedance properties (torque, stiffness) is prioritized)
+> >
+> > Of course, it should be robust to perturbations and will be state- and environment- dependent.  
+> > ![[Pasted image 20260410165009.png]]
+> 
+> The whole purpose of this is I think to create a scalable thing, we don't want to have a model adapted to a specific robot. So we want to have a model working on a DHT that we would then transfer to anz robot provided that we have a model linking the robot to our DHT. and for the HASEL specifically, this is **WP3**.
+
+
 
 ### My task in all this : (c) a novel neuro-mechanical modeling approach that uses (d) RL and machine learning-based co-optimization for synthesizing key human neuro-muscular mechanisms of movement control into robot’s design and force-control schematics.
 
@@ -21,154 +36,141 @@ flowchart LR
   %% STYLES
   %% =========================
   classDef you fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#111827;
-  classDef wp fill:#f3f4f6,stroke:#374151,stroke-width:1.5px,color:#111827;
-  classDef task fill:#ffffff,stroke:#6b7280,stroke-width:1px,color:#111827;
-  classDef hardware fill:#fef3c7,stroke:#d97706,stroke-width:1px,color:#111827;
-  classDef human fill:#dcfce7,stroke:#16a34a,stroke-width:1px,color:#111827;
-  classDef control fill:#ede9fe,stroke:#7c3aed,stroke-width:1px,color:#111827;
-  classDef optimize fill:#fee2e2,stroke:#dc2626,stroke-width:1px,color:#111827;
-  classDef integrate fill:#e0f2fe,stroke:#0284c7,stroke-width:1px,color:#111827;
+  classDef core fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#111827;
+  classDef support fill:#f3f4f6,stroke:#6b7280,stroke-width:1px,color:#111827;
+  classDef output fill:#ede9fe,stroke:#7c3aed,stroke-width:1.5px,color:#111827;
+  classDef real fill:#e0f2fe,stroke:#0284c7,stroke-width:1.5px,color:#111827;
 
   %% =========================
-  %% WP1
+  %% YOUR CORE: WP2
   %% =========================
-  subgraph WP1["WP1 — Artificial muscles"]
+  subgraph WP2["WP2 — Your core PhD space"]
     direction TB
-    T1["T1 Optimize actuators<br/>PhD1 + ER"]
-    T2["T2 Actuator packs arrangement<br/>PhD1 + ER"]
-    T3["T3 Bio-inspired artificial muscle<br/>PhD1 + ER"]
-    T4["T4 Muscle benchmark<br/>PhD1"]
+
+    A["Human experimental data<br/>HD-EMG, motor unit discharges, kinematics,<br/>joint forces, IMUs"]
+    B["T5 — Neural-data driven modeling<br/><b>PhD2</b><br/>Build subject-specific neural/MSK representations"]
+    C["T6 — Neuro-MSK system model<br/>PD1<br/>Reflexes, neural pathways, spiking NN,<br/>feedforward + feedback models"]
+    D["T7 — RL for Digital Human Twins<br/><b>PhD2 + PD1 + SE</b><br/>Train RL policies on neuro-MSK models<br/>for locomotion/manipulation"]
+    
+    E["Digital Human Twin (DHT)<br/>Neuro-mechanically consistent human model"]
+    F["Your main scientific output<br/>Human-like control policies<br/>+ realistic movement/impedance"]
+
+    A --> B
+    B --> E
+    C --> E
+    E --> D
+    D --> F
   end
-  class WP1 wp
-  class T1,T2,T3,T4 hardware
+
+  class A,B,C,D,E,F core
+  class B,D you
 
   %% =========================
-  %% WP2
+  %% WHERE WP2 GOES NEXT
   %% =========================
-  subgraph WP2["WP2 — Digital human twin"]
-    direction TB
-    T5["T5 Neural-data driven modeling<br/>PhD2"]
-    T6["T6 Neuro-MSK system model<br/>PD1"]
-    T7["T7 RL for digital human twins<br/>PhD2 + PD1 + SE"]
-  end
-  class WP2 wp
-  class T5,T6,T7 human
-  class T5,T7 you
+  G["WP3 interface<br/>Robot Digital Twin / robot-side control stack"]
+  H["WP4 interface<br/>Design co-optimization uses simulated performance"]
+  I["T15 — Sim-to-real control<br/><b>PhD2 + PD1 + PD2 + SE</b><br/>Transfer learned control to real systems"]
+  J["Real-world systems<br/>MSK robot / exoskeleton / human-in-the-loop setting"]
 
-  %% =========================
-  %% WP3
-  %% =========================
-  subgraph WP3["WP3 — Model and control"]
-    direction TB
-    T8["T8 MP actuator modeling<br/>PD2"]
-    T9["T9 Include force and self-sensing<br/>PhD3"]
-    T10["T10 Digital MSK robot twin<br/>PhD3 + SE"]
-    T11["T11 Actuation skill acquisition<br/>PhD3"]
-  end
-  class WP3 wp
-  class T8,T9,T10,T11 control
+  class G,H support
+  class I you
+  class J real
+
+  %% Main links outward
+  E --> G
+  F --> G
+  F --> H
+  F --> I
+  G --> I
+  I --> J
 
   %% =========================
-  %% WP4
+  %% LIGHT CONTEXT ONLY
   %% =========================
-  subgraph WP4["WP4 — Co-optimization"]
-    direction TB
-    T12["T12 Design space parametrization<br/>PhD5 + ER"]
-    T13["T13 Bio-inspired objective definition<br/>PhD5"]
-    T14["T14 Computational co-optimization<br/>PhD5"]
-  end
-  class WP4 wp
-  class T12,T13,T14 optimize
+  K["WP1<br/>Artificial muscles / actuators"]
+  L["WP5 hardware integration<br/>Physical robotic platforms"]
 
-  %% =========================
-  %% WP5
-  %% =========================
-  subgraph WP5["WP5 — Integration and tests"]
-    direction TB
-    T15["T15 Sim-to-real control<br/>PhD2 + PD1 + PD2 + SE"]
-    T16["T16 Bipedal robot prototype<br/>PhD4 + ER"]
-    T17["T17 Bipedal benchmark<br/>PhD4"]
-    T18["T18 Robotic hand prototype<br/>PhD4 + ER"]
-    T19["T19 Hand benchmark<br/>PhD4"]
-  end
-  class WP5 wp
-  class T15,T16,T17,T18,T19 integrate
-  class T15 you
+  class K,L support
 
-  %% =========================
-  %% INTERNAL FLOWS
-  %% =========================
-  T1 --> T2 --> T3 --> T4
-  T5 --> T7
-  T6 --> T7
-  T8 --> T9 --> T10 --> T11
-  T12 --> T14
-  T13 --> T14
-  T16 --> T17
-  T18 --> T19
-
-  %% =========================
-  %% CROSS-WP DEPENDENCIES
-  %% =========================
-  T3 --> T10
-  T4 --> T10
-
-  T5 --> T10
-  T6 --> T10
-  T7 --> T11
-
-  T8 --> T10
-  T9 --> T10
-  T10 --> T11
-
-  T10 --> T14
-  T11 --> T14
-
-  T14 --> T16
-  T14 --> T18
-
-  T11 --> T15
-  T10 --> T15
-  T16 --> T15
-  T18 --> T15
-
-  T15 --> T17
-  T15 --> T19
-
-  %% =========================
-  %% HIGH-LEVEL CONCEPT NODES
-  %% =========================
-  H1["Human neural & biomechanical data"]
-  H2["Digital Human Twin (DHT)"]
-  H3["Robot Digital Twin (DRT)"]
-  H4["RL / IL / control policies"]
-  H5["Optimized physical robots"]
-  H6["Real-world transfer & testing"]
-
-  class H1,H2,H3,H4,H5,H6 task
-
-  H1 --> T5
-  T5 --> H2
-  T6 --> H2
-  T7 --> H4
-
-  H2 --> T10
-  T3 --> H3
-  T8 --> H3
-  T9 --> H3
-  T10 --> H3
-
-  H3 --> T11
-  T11 --> H4
-  H3 --> T14
-  H4 --> T14
-
-  T14 --> H5
-  H5 --> T16
-  H5 --> T18
-
-  T15 --> H6
-  H6 --> T17
-  H6 --> T19
+  K --> G
+  L --> I
 ```
 
+
+```mermaid
+flowchart TB
+
+%% =========================
+%% COLOR DEFINITIONS
+%% =========================
+classDef goal fill:#fde68a,stroke:#f59e0b,stroke-width:2px,color:#111827;
+classDef you fill:#bfdbfe,stroke:#2563eb,stroke-width:2px,color:#111827;
+classDef dependency fill:#bbf7d0,stroke:#16a34a,stroke-width:2px,color:#111827;
+classDef support fill:#e5e7eb,stroke:#6b7280,stroke-width:1px,color:#111827;
+classDef output fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
+classDef real fill:#bae6fd,stroke:#0284c7,stroke-width:2px,color:#111827;
+
+%% =========================
+%% FINAL GOAL
+%% =========================
+G["🎯 FINAL GOAL<br/>Human-like MSK robot control<br/>Biologically plausible movement"] 
+class G goal
+
+%% =========================
+%% YOUR CORE PIPELINE
+%% =========================
+subgraph YOU["🧠 YOUR PHd CORE (WP2 + T15)"]
+direction TB
+
+A["Human data<br/>EMG, motor units, kinematics"] 
+B["T5 — Data-model fusion<br/><b>You</b><br/>Map neural signals → muscle force"]
+C["T6 — Neuro-MSK model<br/>Spiking NN, reflexes<br/>(PD1 — you depend on it)"]
+D["Digital Human Twin (DHT)<br/>Neuro-mechanical simulation"]
+E["T7 — RL training<br/><b>You</b><br/>Learn human-like control policies"]
+F["Human-like policies<br/>+ realistic impedance (torque, stiffness, damping)"]
+end
+
+class A,B,E you
+class C dependency
+class D,F output
+
+%% Flow inside your PhD
+A --> B --> D
+C --> D
+D --> E --> F
+
+%% =========================
+%% LINK TO ROBOT SIDE
+%% =========================
+R1["WP3 — Robot Digital Twin<br/>+ actuator modeling (HASEL)<br/>Bridge human ↔ robot"]
+class R1 support
+
+F --> R1
+
+%% =========================
+%% SIM TO REAL (YOU AGAIN)
+%% =========================
+S["T15 — Sim-to-real transfer<br/><b>You</b><br/>Robustness, adaptation,<br/>domain randomization"]
+class S real
+
+R1 --> S
+F --> S
+
+%% =========================
+%% FINAL SYSTEM
+%% =========================
+Real["Real robot / exoskeleton<br/>+ human interaction"]
+class Real real
+
+S --> Real
+Real --> G
+
+%% =========================
+%% HARDWARE (CONTEXT ONLY)
+%% =========================
+H["WP1 + WP5 hardware<br/>Artificial muscles + robot body"]
+class H support
+
+H --> R1
+```

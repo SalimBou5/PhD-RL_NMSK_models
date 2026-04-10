@@ -69,14 +69,6 @@
 > > Neuromechanically-inspired controllers
 
 
-|                                                            |                                                                         |
-| :--------------------------------------------------------- | :---------------------------------------------------------------------- |
-| > [!SUCCESS] Advantages <br> - High DoF <br> - Lightweight | > [!FAILURE] Current Limits <br> - Power density <br> - Heat management |
-
-
-
-
-
 > [!TODO] **Next Milestones**
 > - [x] Define EFA parameters
 > - [/] Prototype musculoskeletal leg    
