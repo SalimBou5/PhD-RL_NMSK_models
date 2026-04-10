@@ -1,0 +1,12 @@
+- [ ] Prepare the whole code, not only training $\Rightarrow$ **DO NOT FORGET PROBLEM IN DART**
+	- [ ] have the EVALUATION ready from the start
+	- [ ] When the whole pipeline is ready (training + evaluation), integrate in the code automated logging:
+		- [ ] Before the start of each run, commit and push and add an experiment ID (at least the date (if not the purpose too))
+		- [ ] Automatically create a folder with the experiment ID. Put inside:
+			- [ ] JSON or whatever which stores the experiment ID, the git commit hash, all the config (all the parameters written), start time, and status ("running", change to successful if it reaches the end),
+			- [ ] also write why we did this experiment (VERY VERY IMPORTANT)
+			- [ ] If not crashed, all the metrics in a CSV 
+			- [ ] a discussion of these metrics right after it's done
+			- [ ] If crashed explain the reason why !!
+			- [ ] this folder would also contain the model and the checkpoints
+	- [ ] For each group of experiment, a summary file discussing the results we got there, probably by the time we got there, AI would do it very efficiently, (the goal of the family, the parameter range explored, the best result, what failed, what you learned, the next step.)

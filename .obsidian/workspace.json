@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "f3d8415bae3fdcc7",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ea9a0b461fabe7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9100b72388c8825f",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Sans titre.base",
+                "viewName": "Tableau"
+              },
+              "icon": "lucide-table",
+              "title": "Sans titre"
+            }
+          },
+          {
+            "id": "d0fb0b20d67809a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "intro/Literature review/1 - Research proposal - ETH + UT.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1 - Research proposal - ETH + UT"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bc702aad0da0e655",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f317a00694c7c57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c7b7833cfe1085ec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorateur de fichiers"
+            }
+          },
+          {
+            "id": "c615997fefcaa38b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Rechercher"
+            }
+          },
+          {
+            "id": "44f8d112d5575ee3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Signets"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ac922209a857d37b",
+    "type": "split",
+    "children": [
+      {
+        "id": "00d51badb35ef9e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83246a7a3abb7be0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Meetings/Meeting Yolanda.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rétrolien pour Meeting Yolanda"
+            }
+          },
+          {
+            "id": "2f0da2ad9588db07",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Meetings/Meeting Yolanda.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Liens sortants de Meeting Yolanda"
+            }
+          },
+          {
+            "id": "82509c6b8d39552d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Mots-clés"
+            }
+          },
+          {
+            "id": "58bcb2d8fcc820d4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Toutes les propriétés"
+            }
+          },
+          {
+            "id": "7ba5c837c475aeca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Meetings/Meeting Yolanda.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Plan de Meeting Yolanda"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "bases:Créer une nouvelle base": false,
+      "audio-recorder:Démarrer / arrêter l'enregistrement": false,
+      "markdown-importer:Ouvrir l'importateur Markdown": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "d0fb0b20d67809a1",
+  "lastOpenFiles": [
+    "OBSIDIAN - TRICKS.md",
+    "Sans titre.base",
+    "Sans titre.canvas",
+    "intro/Literature review/1 - Research proposal - ETH + UT.md",
+    "Meetings/0-Meeting Yolanda.md",
+    "2026-04-09.md",
+    "intro/Organization.md",
+    "Meetings",
+    "intro/Literature review",
+    "intro",
+    "Bienvenue.md"
+  ]
+}
