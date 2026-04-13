@@ -31,7 +31,7 @@ Tasks in which I may be involved:
   > [!INFO] I am not sure I would be involved in this but it would definitely be involved in this to understand what lies behind the model 
 
 ```mermaid
-flowchart LR
+flowchart TB
   %% =========================
   %% STYLES
   %% =========================
@@ -173,4 +173,121 @@ H["WP1 + WP5 hardware<br/>Artificial muscles + robot body"]
 class H support
 
 H --> R1
+```
+
+```mermaid
+flowchart TB
+
+%% =========================
+%% COLOR DEFINITIONS
+%% =========================
+classDef goal fill:#fde68a,stroke:#f59e0b,stroke-width:2px,color:#111827;
+classDef you fill:#bfdbfe,stroke:#2563eb,stroke-width:2px,color:#111827;
+classDef dependency fill:#bbf7d0,stroke:#16a34a,stroke-width:2px,color:#111827;
+classDef output fill:#ddd6fe,stroke:#7c3aed,stroke-width:2px,color:#111827;
+classDef support fill:#e5e7eb,stroke:#6b7280,stroke-width:1px,color:#111827;
+classDef real fill:#bae6fd,stroke:#0284c7,stroke-width:2px,color:#111827;
+
+%% =========================
+%% FINAL GOAL (CENTER)
+%% =========================
+G["🎯 FINAL GOAL<br/>Biologically plausible MSK robot control"]
+class G goal
+
+%% =========================
+%% YOUR PIPELINE (SEQUENTIAL)
+%% =========================
+subgraph CORE["🧠 YOUR CORE PIPELINE (WP2)"]
+direction TB
+
+A["Human data<br/>HD-EMG, motor units, kinematics"]
+B["T5 — Data-model fusion<br/><b>You</b><br/>Neural → muscle-force mapping"]
+C["T6 — Neuro-MSK model<br/>Spiking NN, reflexes (PD1)"]
+D["Digital Human Twin (DHT)"]
+E["T7 — RL training<br/><b>You</b><br/>Learn human-like control"]
+F["Policies<br/>Realistic force & impedance"]
+
+A --> B --> C --> D --> E --> F
+end
+
+class A,B,E you
+class C dependency
+class D,F output
+
+%% =========================
+%% ROBOT INTERFACE (WP3)
+%% =========================
+R["WP3 — Robot Digital Twin<br/>Map human control → robot (HASEL, actuators)"]
+class R support
+
+F --> R
+
+%% =========================
+%% SIM2REAL (YOU AGAIN)
+%% =========================
+S["T15 — Sim-to-real transfer<br/><b>You</b><br/>Robustness, adaptation"]
+class S real
+
+F --> S
+R --> S
+
+%% =========================
+%% REAL SYSTEM
+%% =========================
+Real["Real robot / exoskeleton"]
+class Real real
+
+S --> Real
+Real --> G
+
+%% =========================
+%% HARDWARE CONTEXT
+%% =========================
+H["WP1 + WP5 hardware<br/>Muscles + robot body"]
+class H support
+
+H --> R
+```
+## Task 5
+This is the **data → model step**
+
+- Input:
+	- HD-EMG
+	- motor neuron discharges
+	- kinematics
+- Output:
+	- motor unit properties
+	- neural activation patterns
+
+💡 This is:  
+👉 **data-model fusion**
+
+## Task 6
+This is the **structured neuro-control model**
+
+- spiking neural network
+- sensory + motor neurons
+- feedback loops
+- reflexes
+
+BUT — and this is important:
+
+👉 It is **built using outputs from T5**
+
+## 🧩 T5 gives:
+
+👉 **what the system does (data)**
+
+## 🧩 T6 builds:
+
+👉 **a system that can reproduce that behavior**
+
+```mermaid
+flowchart LR
+  A["T5 (you)<br/>Data-driven modeling<br/>Motor units, EMG, neural signals"]
+  B["T6 (PD1)<br/>Neuro-MSK model<br/>Spiking NN + reflexes"]
+  C["DHT<br/>Digital Human Twin"]
+  D["T7 (you)<br/>RL training"]
+
+  A --> B --> C --> D
 ```
