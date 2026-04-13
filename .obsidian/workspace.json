@@ -197,20 +197,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
-      "audio-recorder:Start/stop recording": false,
-      "bases:Create new base": false,
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false,
+      "markdown-importer:Ouvrir l'importateur Markdown": false,
+      "audio-recorder:Démarrer / arrêter l'enregistrement": false,
+      "bases:Créer une nouvelle base": false,
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
   "active": "9100b72388c8825f",
   "lastOpenFiles": [
+    "Pasted image 20260413192340.png",
+    "Pasted image 20260413185252.png",
     "OBSIDIAN - TRICKS.md",
     "intro/Literature review/2 - Kinesis.md",
     "intro/Literature review/1 - Research proposal - ETH + UT.md",
