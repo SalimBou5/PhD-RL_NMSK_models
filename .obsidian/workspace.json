@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ac922209a857d37b",
@@ -189,6 +188,8 @@
   },
   "active": "f1e8db80e839133d",
   "lastOpenFiles": [
+    "Pasted image 20260413192340.png",
+    "Pasted image 20260413185252.png",
     "intro/Literature review/3 - Exo-Plore-gipitou.md",
     "intro/Literature review/3 - Exo-plore-gipitou (2).md",
     "intro/Literature review/Exo-plore-gipitou.md",
